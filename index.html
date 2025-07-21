@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Launch Your Business with Alreflections</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f8f9fa;
+      color: #333;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background: #0b3d91;
+      color: white;
+      padding: 40px 20px;
+      text-align: center;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2em;
+    }
+    header p {
+      font-size: 1.2em;
+      margin-top: 10px;
+    }
+    section {
+      max-width: 600px;
+      margin: 30px auto;
+      background: white;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    section h2 {
+      color: #0b3d91;
+    }
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+    ul li::before {
+      content: "✔️";
+      margin-right: 8px;
+      color: green;
+    }
+    form {
+      margin-top: 20px;
+      display: flex;
+      flex-direction: column;
+    }
+    input, button {
+      padding: 12px;
+      margin-bottom: 10px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      font-size: 1em;
+    }
+    button {
+      background: #0b3d91;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #092d6a;
+    }
+    .success {
+      color: green;
+      font-weight: bold;
+      display: none;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Launch Your Business — Fast & Smart</h1>
+  <p>Professional Websites, Branding & Marketing by Alreflections</p>
+</header>
+
+<section>
+  <h2>Get Started With:</h2>
+  <ul>
+    <li>5-Day Website Delivery</li>
+    <li>Free Branding Package</li>
+    <li>Client Attraction Blueprint</li>
+    <li>Affordable, Transparent Pricing</li>
+  </ul>
+
+  <h3>Book a Free Consultation</h3>
+  <form id="leadForm">
+    <input type="text" id="name" placeholder="Your Full Name" required>
+    <input type="email" id="email" placeholder="Your Email Address" required>
+    <input type="text" id="business" placeholder="Your Business Idea (Optional)">
+    <button type="submit">Get Started</button>
+    <p class="success" id="successMessage">Thank you! We'll contact you soon.</p>
+  </form>
+</section>
+
+<script>
+  const form = document.getElementById('leadForm');
+  const successMessage = document.getElementById('successMessage');
+
+  form.addEventListener('submit', function(e) {
+    e.preventDefault();
+    const name = document.getElementById('name').value.trim();
+    const email = document.getElementById('email').value.trim();
+
+    if (name === '' || email === '') {
+      alert('Please fill in your name and email.');
+      return;
+    }
+
+    successMessage.style.display = 'block';
+    form.reset();
+
+    // Here you can integrate with your backend / email tool
+    // Example: send data via fetch() to your lead handler
+  });
+</script>
+
+</body>
+</html>
